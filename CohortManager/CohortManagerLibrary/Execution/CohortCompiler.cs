@@ -75,6 +75,11 @@ namespace CohortManagerLibrary.Execution
             return Tasks.SingleOrDefault(kvp => kvp.Key.Child.Equals(c)).Key;
         }
 
+        public ICompileable GetTaskIfExists(IMapsDirectlyToDatabaseTable c)
+        {
+            return Tasks.SingleOrDefault(kvp => kvp.Key.Child.Equals(c)).Key;
+        }
+
         public void AddTask(IMapsDirectlyToDatabaseTable c, IEnumerable<ISqlParameter> globals)
         {
             var aggregate = c as AggregateConfiguration;

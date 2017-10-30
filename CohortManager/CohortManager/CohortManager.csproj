@@ -181,6 +181,12 @@
     <Compile Include="SubComponents\CohortIdentificationConfigurationUI.Designer.cs">
       <DependentUpon>CohortIdentificationConfigurationUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubComponents\CohortVennDiagram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubComponents\CohortVennDiagram.Designer.cs">
+      <DependentUpon>CohortVennDiagram.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubComponents\Graphs\CohortSummaryAggregateGraph.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -256,6 +262,9 @@
       <Link>SourceCodeForSelfAwareness.zip</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="SubComponents\CohortVennDiagram.resx">
+      <DependentUpon>CohortVennDiagram.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubComponents\ViewCohortIdentificationConfigurationUI.resx">
       <DependentUpon>ViewCohortIdentificationConfigurationUI.cs</DependentUpon>
     </EmbeddedResource>

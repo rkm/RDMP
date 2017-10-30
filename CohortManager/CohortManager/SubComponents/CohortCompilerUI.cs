@@ -85,7 +85,6 @@ namespace CohortManager.SubComponents
     public partial class 
         CohortCompilerUI : CohortCompilerUI_Design,IConsultableBeforeClosing
     {
-        public event EventHandler SelectionChanged;
         private CohortIdentificationConfiguration _configuration;
         private CohortAggregateContainer _root;
 
@@ -652,6 +651,14 @@ namespace CohortManager.SubComponents
 
             tlvConfiguration.RefreshObjects(tlvConfiguration.Objects.OfType<Compileable>().ToList());
 
+
+            var compileable = tlvConfiguration.SelectedObject as AggregationContainerTask;
+
+            if (compileable != null)
+                cohortVennDiagram1.SetupFor(_activator.CoreIconProvider,compileable.Container, Compiler);
+            else
+                cohortVennDiagram1.Clear();
+
         }
 
         private void UpdateRunnablesButtons()
@@ -684,11 +691,6 @@ namespace CohortManager.SubComponents
             btnClearCacheAll.Enabled = GetCacheClearableTasks(false).Any();
         }
 
-        private void otvConfiguration_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (SelectionChanged != null)
-                SelectionChanged(sender, e);
-        }
 
         private IEnumerable<ICachableTask> GetSelectedCachableTasks()
         {

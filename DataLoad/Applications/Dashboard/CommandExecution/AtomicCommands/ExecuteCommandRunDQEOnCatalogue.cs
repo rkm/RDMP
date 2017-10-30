@@ -15,7 +15,8 @@ using ReusableUIComponents.Icons.IconProvision;
 
 namespace Dashboard.CommandExecution.AtomicCommands
 {
-    public class ExecuteCommandRunDQEOnCatalogue:BasicUICommandExecution,IAtomicCommandWithTarget
+    public class 
+        ExecuteCommandRunDQEOnCatalogue:BasicUICommandExecution,IAtomicCommandWithTarget
     {
         private Catalogue _catalogue;
 

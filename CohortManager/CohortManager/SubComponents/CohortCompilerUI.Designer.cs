@@ -56,6 +56,7 @@ namespace CohortManager.SubComponents
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbAutoCache = new System.Windows.Forms.CheckBox();
+            this.cohortVennDiagram1 = new CohortManager.SubComponents.CohortVennDiagram();
             ((System.ComponentModel.ISupportInitialize)(this.tlvConfiguration)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -91,7 +92,7 @@ namespace CohortManager.SubComponents
             this.tlvConfiguration.Location = new System.Drawing.Point(4, 0);
             this.tlvConfiguration.Name = "tlvConfiguration";
             this.tlvConfiguration.ShowGroups = false;
-            this.tlvConfiguration.Size = new System.Drawing.Size(536, 538);
+            this.tlvConfiguration.Size = new System.Drawing.Size(634, 543);
             this.tlvConfiguration.TabIndex = 0;
             this.tlvConfiguration.UseCompatibleStateImageBehavior = false;
             this.tlvConfiguration.View = System.Windows.Forms.View.Details;
@@ -99,7 +100,6 @@ namespace CohortManager.SubComponents
             this.tlvConfiguration.CellRightClick += new System.EventHandler<BrightIdeasSoftware.CellRightClickEventArgs>(this.otvConfiguration_CellRightClick);
             this.tlvConfiguration.SelectionChanged += new System.EventHandler(this.otvConfiguration_SelectionChanged);
             this.tlvConfiguration.ItemActivate += new System.EventHandler(this.otvConfiguration_ItemActivate);
-            this.tlvConfiguration.SelectedIndexChanged += new System.EventHandler(this.otvConfiguration_SelectedIndexChanged);
             this.tlvConfiguration.KeyUp += new System.Windows.Forms.KeyEventHandler(this.otvConfiguration_KeyUp);
             // 
             // olvAggregate
@@ -169,7 +169,7 @@ namespace CohortManager.SubComponents
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(264, 611);
+            this.label1.Location = new System.Drawing.Point(264, 616);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 5;
@@ -178,7 +178,7 @@ namespace CohortManager.SubComponents
             // tbTimeout
             // 
             this.tbTimeout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbTimeout.Location = new System.Drawing.Point(324, 608);
+            this.tbTimeout.Location = new System.Drawing.Point(324, 613);
             this.tbTimeout.Name = "tbTimeout";
             this.tbTimeout.Size = new System.Drawing.Size(94, 20);
             this.tbTimeout.TabIndex = 6;
@@ -188,7 +188,7 @@ namespace CohortManager.SubComponents
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancel.Location = new System.Drawing.Point(210, 585);
+            this.btnCancel.Location = new System.Drawing.Point(210, 590);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(54, 39);
             this.btnCancel.TabIndex = 4;
@@ -205,7 +205,7 @@ namespace CohortManager.SubComponents
             // 
             this.lblThreadCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblThreadCount.AutoSize = true;
-            this.lblThreadCount.Location = new System.Drawing.Point(7, 541);
+            this.lblThreadCount.Location = new System.Drawing.Point(7, 546);
             this.lblThreadCount.Name = "lblThreadCount";
             this.lblThreadCount.Size = new System.Drawing.Size(81, 13);
             this.lblThreadCount.TabIndex = 8;
@@ -249,7 +249,7 @@ namespace CohortManager.SubComponents
             // 
             this.cbIncludeCumulative.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbIncludeCumulative.AutoSize = true;
-            this.cbIncludeCumulative.Location = new System.Drawing.Point(270, 587);
+            this.cbIncludeCumulative.Location = new System.Drawing.Point(270, 592);
             this.cbIncludeCumulative.Name = "cbIncludeCumulative";
             this.cbIncludeCumulative.Size = new System.Drawing.Size(148, 17);
             this.cbIncludeCumulative.TabIndex = 11;
@@ -262,7 +262,7 @@ namespace CohortManager.SubComponents
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.btnClearCacheAll);
             this.groupBox1.Controls.Add(this.btnClearCacheForSelected);
-            this.groupBox1.Location = new System.Drawing.Point(424, 571);
+            this.groupBox1.Location = new System.Drawing.Point(424, 576);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(113, 58);
             this.groupBox1.TabIndex = 12;
@@ -285,7 +285,7 @@ namespace CohortManager.SubComponents
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.btnStartAll);
             this.groupBox2.Controls.Add(this.btnStartSelected);
-            this.groupBox2.Location = new System.Drawing.Point(4, 571);
+            this.groupBox2.Location = new System.Drawing.Point(4, 576);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(93, 58);
             this.groupBox2.TabIndex = 13;
@@ -297,7 +297,7 @@ namespace CohortManager.SubComponents
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.Controls.Add(this.cbAutoCache);
             this.groupBox3.Controls.Add(this.btnCacheSelected);
-            this.groupBox3.Location = new System.Drawing.Point(103, 574);
+            this.groupBox3.Location = new System.Drawing.Point(103, 579);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(105, 55);
             this.groupBox3.TabIndex = 14;
@@ -314,10 +314,19 @@ namespace CohortManager.SubComponents
             this.cbAutoCache.Text = "Auto Cache";
             this.cbAutoCache.UseVisualStyleBackColor = true;
             // 
+            // cohortVennDiagram1
+            // 
+            this.cohortVennDiagram1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cohortVennDiagram1.Location = new System.Drawing.Point(641, 3);
+            this.cohortVennDiagram1.Name = "cohortVennDiagram1";
+            this.cohortVennDiagram1.Size = new System.Drawing.Size(604, 605);
+            this.cohortVennDiagram1.TabIndex = 15;
+            // 
             // CohortCompilerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cohortVennDiagram1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lblThreadCount);
@@ -328,7 +337,7 @@ namespace CohortManager.SubComponents
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.tlvConfiguration);
             this.Name = "CohortCompilerUI";
-            this.Size = new System.Drawing.Size(540, 632);
+            this.Size = new System.Drawing.Size(1248, 637);
             ((System.ComponentModel.ISupportInitialize)(this.tlvConfiguration)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -365,5 +374,6 @@ namespace CohortManager.SubComponents
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox cbAutoCache;
+        private CohortVennDiagram cohortVennDiagram1;
     }
 }
