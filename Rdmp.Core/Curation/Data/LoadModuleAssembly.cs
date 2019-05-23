@@ -54,7 +54,7 @@ namespace Rdmp.Core.Curation.Data
             "CommitAssembly.dll",
             "ReusableLibraryCode.dll",
             "LoadModules.Generic.dll",
-            "LoadModules.GenericUIs.dll",
+            "Rdmp.UI.DataLoadUIs.LoadModuleUIs.dll",
             "CohortManagerLibrary.dll",
             "DataQualityEngine.dll",
             "DataQualityEngine.Database.dll",

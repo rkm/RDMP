@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <ProjectGuid>60721bce-e328-45cf-b6d2-b627364fbbfa</ProjectGuid>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyTitle>Rdmp.UI</AssemblyTitle>
     <Product>Rdmp.UI</Product>
     <Copyright>Copyright ©  2019</Copyright>
@@ -79,6 +79,57 @@
     <Compile Update="CommandExecution\AtomicCommands\UIFactory\AtomicCommandWithTargetUI.Designer.cs">
       <DependentUpon>AtomicCommandWithTargetUI.cs</DependentUpon>
     </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\AdjustColumnDataTypesUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\AdjustColumnDataTypesUI.Designer.cs">
+      <SubType>Form</SubType>
+      <DependentUpon>AdjustColumnDataTypesUI.cs</DependentUpon>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\DatabaseColumnRequestUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\DatabaseColumnRequestUI.Designer.cs">
+      <DependentUpon>DatabaseColumnRequestUI.cs</DependentUpon>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\DataFlowSources\ExplicitColumnTypeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\DataFlowSources\ExplicitColumnTypeUI.Designer.cs">
+      <DependentUpon>ExplicitColumnTypeUI.cs</DependentUpon>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\DataFlowSources\ExplicitTypingCollectionUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\DataFlowSources\ExplicitTypingCollectionUI.Designer.cs">
+      <SubType>Form</SubType>
+      <DependentUpon>ExplicitTypingCollectionUI.cs</DependentUpon>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\DataProvider\WebServiceConfigurationUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\DataProvider\WebServiceConfigurationUI.Designer.cs">
+      <DependentUpon>WebServiceConfigurationUI.cs</DependentUpon>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\LoadProgressUpdating\DataLoadProgressUpdateInfoUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DataLoadUIs\ModuleUIs\LoadProgressUpdating\DataLoadProgressUpdateInfoUI.Designer.cs">
+      <SubType>Form</SubType>
+      <DependentUpon>DataLoadProgressUpdateInfoUI.cs</DependentUpon>
+    </Compile>
+    <Compile Update="SimpleControls\SelectIMapsDirectlyToDatabaseTableComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SimpleControls\SelectIMapsDirectlyToDatabaseTableComboBox.Designer.cs">
+      <DependentUpon>SelectIMapsDirectlyToDatabaseTableComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Update="SimpleDialogs\SelectIMapsDirectlyToDatabaseTableDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SimpleDialogs\SelectIMapsDirectlyToDatabaseTableDialog.Designer.cs">
+      <DependentUpon>SelectIMapsDirectlyToDatabaseTableDialog.cs</DependentUpon>
+    </Compile>
     <Compile Update="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +178,18 @@
     <Compile Update="SubComponents\ViewCohortIdentificationConfigurationUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Versioning\CreatePlatformDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Versioning\CreatePlatformDatabase.Designer.cs">
+      <DependentUpon>CreatePlatformDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Versioning\PatchingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Versioning\PatchingUI.Designer.cs">
+      <DependentUpon>PatchingUI.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="CohortUI\CohortSourceManagement\CreateNewCohortDatabaseWizardUI.resx">
@@ -158,6 +221,24 @@
       <DependentUpon>AtomicCommandWithTargetUI.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Update="DataLoadUIs\ModuleUIs\AdjustColumnDataTypesUI.resx">
+      <DependentUpon>AdjustColumnDataTypesUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DataLoadUIs\ModuleUIs\DatabaseColumnRequestUI.resx">
+      <DependentUpon>DatabaseColumnRequestUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DataLoadUIs\ModuleUIs\DataFlowSources\ExplicitColumnTypeUI.resx">
+      <DependentUpon>ExplicitColumnTypeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DataLoadUIs\ModuleUIs\DataFlowSources\ExplicitTypingCollectionUI.resx">
+      <DependentUpon>ExplicitTypingCollectionUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DataLoadUIs\ModuleUIs\DataProvider\WebServiceConfigurationUI.resx">
+      <DependentUpon>WebServiceConfigurationUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DataLoadUIs\ModuleUIs\LoadProgressUpdating\DataLoadProgressUpdateInfoUI.resx">
+      <DependentUpon>DataLoadProgressUpdateInfoUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Update="PipelineUIs\DemandsInitializationUIs\ArgumentCollectionUI.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -169,6 +250,20 @@
     </EmbeddedResource>
     <EmbeddedResource Update="SimpleDialogs\Reports\GenerateTestDataUI.resx">
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SimpleControls\SelectIMapsDirectlyToDatabaseTableComboBox.resx">
+      <DependentUpon>SelectIMapsDirectlyToDatabaseTableComboBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SimpleDialogs\SelectIMapsDirectlyToDatabaseTableDialog.resx">
+      <DependentUpon>SelectIMapsDirectlyToDatabaseTableDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Versioning\CreatePlatformDatabase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CreatePlatformDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Versioning\PatchingUI.resx">
+      <DependentUpon>PatchingUI.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

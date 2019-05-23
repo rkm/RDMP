@@ -31,7 +31,7 @@ using Rdmp.UI.SimpleDialogs.Reports;
 using Rdmp.UI.TestsAndSetup.ServicePropogation;
 using Rdmp.UI.Tutorials;
 using ResearchDataManagementPlatform.Menus.MenuItems;
-using ResearchDataManagementPlatform.Updates;
+//using ResearchDataManagementPlatform.Updates;
 using ResearchDataManagementPlatform.WindowManagement;
 using ResearchDataManagementPlatform.WindowManagement.ContentWindowTracking.Persistence;
 using ResearchDataManagementPlatform.WindowManagement.Licenses;
@@ -356,9 +356,9 @@ namespace ResearchDataManagementPlatform.Menus
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var ui = new UpdaterUI();
+            /*var ui = new UpdaterUI();
             var f = new SingleControlForm(ui);
-            f.ShowDialog();
+            f.ShowDialog();*/
         }
     }
 }

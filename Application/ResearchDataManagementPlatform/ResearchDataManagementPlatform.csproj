@@ -1,48 +1,22 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <ProjectGuid>{550988FD-F1FA-41D8-BE0F-00B4DE47D320}</ProjectGuid>
     <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <TargetFramework>net461</TargetFramework>
-        <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\Development\Deployments\RDMP\ResearchDataManagementPlatform\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>1</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>true</UpdatePeriodically>
-    <UpdateRequired>true</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://hic.dundee.ac.uk/Installers/RDMP/ResearchDataManagementPlatform/</InstallUrl>
-    <UpdateUrl>https://hic.dundee.ac.uk/Installers/RDMP/ResearchDataManagementPlatform/</UpdateUrl>
-    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
-    <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <PublishWizardCompleted>true</PublishWizardCompleted>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 	<DocumentationFile />
   </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>281B452B12FB1AE15FE7F790EC4119495C4525B9</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestTimestampUrl>http://timestamp.verisign.com/scripts/timstamp.dll</ManifestTimestampUrl>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-    <LangVersion>7.1</LangVersion>
-  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Updates\UpdaterUI.cs" />
+    <Compile Remove="Updates\UpdaterUI.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Updates\UpdaterUI.resx" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DockPanelSuite" Version="3.1.0-beta2" />
     <PackageReference Include="DockPanelSuite.ThemeVS2015" Version="3.1.0-beta2" />
@@ -62,9 +36,6 @@
       <DependentUpon>RDMPMainForm.cs</DependentUpon>
     </Compile>
     <Compile Update="WindowManagement\HomePane\HomeUI.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Updates\UpdaterUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="WindowManagement\HomePane\HomeUI.Designer.cs">
@@ -161,5 +132,8 @@
     <ProjectReference Include="..\..\Reusable\MapsDirectlyToDatabaseTable\MapsDirectlyToDatabaseTable.csproj" />
     <ProjectReference Include="..\..\Reusable\ReusableLibraryCode\ReusableLibraryCode.csproj" />
     <ProjectReference Include="..\..\Reusable\ReusableUIComponents\ReusableUIComponents.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Updates\" />
   </ItemGroup>
 </Project>
