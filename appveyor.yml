@@ -4,7 +4,9 @@ before_build:
 - nuget restore
 - choco install opencover.portable
 - choco install codecov
-
+- cmd: "dotnet publish \"./Tools/rdmp\" -r win-x64 /v:q"
+- cmd: "./Tools/rdmp/bin/Debug/netcoreapp3.1/win-x64/rdmp.exe install localhost TEST_ -D -u sa -p Password12!"
+  
 build_script:
 
 - ps: dotnet build HIC.DataManagementPlatform.sln /v:q
@@ -14,6 +16,3 @@ test: off
 services:
   - mssql2017
 
-before_build: 
-  - cmd: "dotnet publish \"./Tools/rdmp\" -r win-x64 /v:q"
-  - cmd: "./Tools/rdmp/bin/Debug/netcoreapp3.1/win-x64/rdmp.exe install localhost TEST_ -D -u sa -p Password12!"
