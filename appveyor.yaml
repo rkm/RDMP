@@ -5,12 +5,12 @@ before_build:
 - choco install opencover.portable
 - choco install codecov
 
+build_script:
+
+- ps: dotnet build HIC.DataManagementPlatform.sln /v:q
+
 services:
   - mssql2017
-
-build:
-  project: HIC.DataManagementPlatform.sln
-  verbosity: minimal
 
 before_build: 
   - cmd: "dotnet publish \"./Tools/rdmp\" -r win-x64 /v:q"
