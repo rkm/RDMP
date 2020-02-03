@@ -51,10 +51,11 @@ namespace Rdmp.Core.Curation.Data
         public Dictionary<string,Exception> BadAssembliesDictionary { get; set; }
         
         /// <summary>
-        /// Creates a new list of MEF plugin classes from the dlls/files in the directory list provided
+        /// Creates a new list of MEF plugin classes from the dlls/files in the directory list provided.
+        /// This method will pipe all warnings/errors to an <see cref="IgnoreAllErrorsCheckNotifier"/>.
         /// </summary>
         /// <param name="directories"></param>
-        public SafeDirectoryCatalog(params string[] directories):this(null,directories)
+        public SafeDirectoryCatalog(params string[] directories):this(new IgnoreAllErrorsCheckNotifier(),directories)
         {
         }
 
