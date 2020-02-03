@@ -9,6 +9,8 @@ build_script:
 
 - ps: dotnet build HIC.DataManagementPlatform.sln /v:q
 
+test: off
+
 services:
   - mssql2017
 
