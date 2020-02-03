@@ -5,7 +5,7 @@ before_build:
 - choco install opencover.portable
 - choco install codecov
 - cmd: "dotnet publish \"./Tools/rdmp\" -r win-x64 /v:q"
-- cmd: "./Tools/rdmp/bin/Debug/netcoreapp3.1/win-x64/rdmp.exe install localhost TEST_ -D -u sa -p Password12!"
+- ps: "./Tools/rdmp/bin/Debug/netcoreapp3.1/win-x64/rdmp.exe install localhost TEST_ -D -u sa -p Password12!"
   
 build_script:
 
