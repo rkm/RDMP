@@ -1,5 +1,8 @@
 image: Visual Studio 2019
 
+init:
+- git config --global core.autocrlf true
+
 before_build:
 - nuget restore
 - choco install opencover.portable
