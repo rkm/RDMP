@@ -26,3 +26,9 @@ Alternatively you can run `msbuild` or `rake build` (set path to MSBuild15CMD in
 
 ## Integration Test Database
 In addition to unit tests, the RDMP test suite includes many Integration tests which require writing to a database.  You can [read how to set up your test environment in Tests.md](Documentation/CodeTutorials/Tests.md).
+
+Once you have setup test databases you can run the tests using:
+
+```bash
+dotnet test -p:BuildInParallel=false dirs.proj
+```
