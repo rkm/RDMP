@@ -12,6 +12,6 @@ build:
   project: HIC.DataManagementPlatform.sln
   verbosity: minimal
 
-after_test: 
-  - cmd: "dotnet publish "./Tools/rdmp" -r win-x64 /v:q"
-  - cmd: "./Tools/rdmp/bin/Debug/netcoreapp3.1/win-x64/rdmp install localhost TEST_ -D -u sa -p Password12!"
+before_build: 
+  - cmd: "dotnet publish \"./Tools/rdmp\" -r win-x64 /v:q"
+  - cmd: "./Tools/rdmp/bin/Debug/netcoreapp3.1/win-x64/rdmp.exe install localhost TEST_ -D -u sa -p Password12!"
