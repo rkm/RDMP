@@ -1,0 +1,17 @@
+image: Visual Studio 2019
+
+before_build:
+- nuget restore
+- choco install opencover.portable
+- choco install codecov
+
+services:
+  - mssql2017
+
+build:
+  project: HIC.DataManagementPlatform.sln
+  verbosity: minimal
+
+after_test: 
+  - cmd: "dotnet publish "./Tools/rdmp" -r win-x64 /v:q"
+  - cmd: "./Tools/rdmp/bin/Debug/netcoreapp3.1/win-x64/rdmp install localhost TEST_ -D -u sa -p Password12!"
