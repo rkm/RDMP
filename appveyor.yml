@@ -9,7 +9,11 @@ before_build:
   
 build_script:
 
+- ps: Remove-Item .\Tests.Common\TestDatabases.txt
+- ps: Rename-Item .\Tests.Common\Appveyor.TestDatabases.txt TestDatabases.txt
 - ps: dotnet build HIC.DataManagementPlatform.sln /v:q
+- ps: dotnet test -p:BuildInParallel=false dirs.proj
+
 
 test: off
 
